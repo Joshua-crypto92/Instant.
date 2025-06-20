@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSTANT</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100%;
+      background-color: #ffffff;
+    }
+    .header-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #e6f0ff;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #007BFF;
+      background-color: rgba(0, 123, 255, 0.05);
+      padding: 10px 20px;
+      border-radius: 15px;
+    }
+    .address-button, .sign-in {
+      height: 60px;
+      font-size: 1.3rem;
+      padding: 0 30px;
+      font-weight: bold;
+      border: 2px solid #007BFF;
+      border-radius: 15px;
+      background-color: transparent;
+      color: black;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .cart-icon {
+      width: 120px;
+      height: 60px;
+      background-color: #66bfff;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: white;
+      cursor: default;
+      text-decoration: none;
+    }
+    .cart-icon::before {
+      content: '\1F6D2';
+    }
+    .search-bar {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 60px;
+    }
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+    }
+    .search-wrapper input {
+      width: 100%;
+      padding: 10px 20px 10px 45px;
+      font-size: 1rem;
+      border-radius: 22px;
+      border: 2px solid #007BFF;
+      outline: none;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+    .search-wrapper .icon {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #007BFF;
+    }
+    .offer-banner {
+      position: fixed;
+      top: 105px;
+      width: 100%;
+      overflow: hidden;
+      background-color: #ffffff;
+      z-index: 998;
+      height: 40px;
+    }
+    .offer-track {
+      display: flex;
+      animation: scrollBanner 14s linear infinite;
+    }
+    .offer-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: black;
+      padding: 5px 40px;
+      white-space: nowrap;
+    }
+    @keyframes scrollBanner {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .navbar {
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      border-radius: 20px;
+      width: fit-content;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .nav-item {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+      padding: 12px 20px;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      position: relative;
+      border: 2px solid transparent;
+    }
+    .nav-item:hover {
+      background-color: transparent;
+      border: 2px solid rgba(0, 123, 255, 0.3);
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <div class="header-left">
+      <div class="title">Iɴsᴛᴀɴᴛ</div>
+      <button class="address-button">Sᴇʟᴇᴄᴛ Aᴅᴅʀᴇss</button>
+    </div>
+    <div class="search-bar">
+      <div class="search-wrapper">
+        <span class="icon">🔍</span>
+        <input type="text" placeholder="Search for products" id="searchInput" onkeydown="search(event)" />
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="sign-in">Sign In</button>
+      <a class="cart-icon"></a>
+    </div>
+  </div>
+  <div class="offer-banner">
+    <div class="offer-track">
+      <div class="offer-text">Caution ⚠️ Website Building In Progress , Not Live Yet</div>
+      <div class="offer-text">Caution ⚠️ Website Building In Progress , Not Live Yet</div>
+    </div>
+  </div>
+  <div class="navbar">
+    <a href="#" class="nav-item">Hᴏᴍᴇ</a>
+    <a href="order.html" class="nav-item" target="_blank">Oʀᴅᴇʀ</a>
+    <a href="hotspot.html" class="nav-item" target="_blank">Hᴏᴛsᴘᴏᴛ</a>
+    <a href="support.html" class="nav-item" target="_blank">Sᴜᴘᴘᴏʀᴛ</a>
+  </div>
+  <script>
+    function search(event) {
+      if (event.key === "Enter") {
+        const value = document.getElementById("searchInput").value.toLowerCase();
+        if (value.includes("iphone")) {
+          window.open("iphone.html", "_blank");
+        }
+      }
+    }
+  </script>
+</body>
+</html>

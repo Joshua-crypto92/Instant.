@@ -1,0 +1,149 @@
+<!-- iphone.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 16 Pro Max</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      text-align: center;
+    }
+
+    .header-bar {
+      background-color: #e6f0ff;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #007BFF;
+      background-color: rgba(0, 123, 255, 0.05);
+      padding: 10px 20px;
+      border-radius: 15px;
+    }
+
+    .slider-container {
+      max-width: 400px;
+      margin: 40px auto 20px;
+      position: relative;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+    }
+
+    .next-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: 2px solid #007BFF;
+      border-radius: 15px;
+      background-color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dots {
+      margin-top: 10px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .active {
+      background-color: #007BFF;
+    }
+
+    .specs-box {
+      margin: 40px auto;
+      max-width: 800px;
+      text-align: left;
+      font-size: 1rem;
+      padding: 20px;
+      border-radius: 20px;
+      border: 2px solid #ccc;
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="header-bar">
+    <div class="title">Iɴsᴛᴀɴᴛ</div>
+  </div>
+
+  <div class="slider-container">
+    <img id="iphone-img" class="slider-image" src="download.jpeg" alt="iPhone">
+    <div>
+      <button class="next-button" onclick="nextImage()">Next</button>
+    </div>
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="specs-box">
+    <p>📀 <strong>Design & Display</strong><br>
+    Size: 163 × 77.6 × 8.25 mm; Weight: 227 g<br>
+    Display: 6.9 inch Super Retina XDR OLED, 2868 × 1320px (~460 ppi), 120 Hz ProMotion, 2000 nits peak brightness, always-on<br>
+    Build: Grade 5 titanium frame, premium glass, IP68 (up to 6 m for 30 min)</p>
+
+    <p>⚙️ <strong>Performance</strong><br>
+    Chip: Apple A18 Pro, 6‑core CPU (2×4.04 GHz + 4×2.42 GHz), 6‑core GPU, 16‑core Neural Engine (35 TOPS)<br>
+    RAM: 8 GB LPDDR5X</p>
+
+    <p>📂 <strong>Storage</strong><br>
+    Options: 256 GB, 512 GB, 1 TB</p>
+
+    <p>📷 <strong>Cameras</strong><br>
+    Main: 48 MP Fusion with quad‑pixel sensor, sensor‑shift OIS<br>
+    Ultra‑wide: 48 MP with autofocus<br>
+    Telephoto: 12 MP 5× zoom<br>
+    Front: 12 MP TrueDepth<br>
+    Video: 4K 120 fps Dolby Vision, ProRes, Log, spatial audio</p>
+
+    <p>🔋 <strong>Battery & Charging</strong><br>
+    4685 mAh, USB‑C wired (27 W), MagSafe (25 W), reverse wired (4.5 W)</p>
+
+    <p>🌐 <strong>Connectivity</strong><br>
+    5G, Wi‑Fi 7, BT 5.3, NFC, USB‑C, UWB, Thread, dual SIM</p>
+
+    <p>🎤 <strong>Features</strong><br>
+    New Camera Control button, 4 studio-quality microphones, spatial audio recording<br>
+    iOS 18 + Apple Intelligence (via iOS 18.1+)</p>
+  </div>
+
+  <script>
+    const images = ["download.jpeg", "download (1).jpeg", "download (2).jpeg"];
+    let current = 0;
+
+    function nextImage() {
+      current = (current + 1) % images.length;
+      document.getElementById("iphone-img").src = images[current];
+      document.querySelectorAll(".dot").forEach((d, i) => {
+        d.className = "dot" + (i === current ? " active" : "");
+      });
+    }
+  </script>
+</body>
+</html>
